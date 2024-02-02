@@ -1,0 +1,120 @@
+{
+    "sessionState": {
+        // see Session state for details about the structure
+    },
+    "messages": [
+        {
+            "contentType": "CustomPayload | ImageResponseCard | PlainText | SSML",
+            "content": string,
+            "imageResponseCard": {
+                "title": string,
+                "subtitle": string,
+                "imageUrl": string,
+                "buttons": [
+                    {
+                        "text": string,
+                        "value": string
+                    },
+                    ...
+                ]
+            }
+        },
+        ...
+    ],
+    "requestAttributes": {
+        string: string,
+        ...
+    }
+}
+
+
+SESSION STATE
+
+state{
+    "sessionState": {
+        "dialogAction": {
+            "type": "Delegate"
+    }
+}
+
+{
+    "sessionState": {
+        "dialogAction": {
+            "type": "ElicitIntent"
+    },
+    "messages": [
+        {
+            "contentType": PlainText,
+            "content": "How can I help you?"
+        }
+    ]
+}
+
+{
+    "sessionState": {
+        "dialogAction": {
+            "slotToElicit": "OriginCity",
+            "type": "ElicitSlot"
+        },
+        "intent": {
+            "name": "BookFlight"
+        }
+    }
+}
+
+{
+    "sessionState": {
+        "dialogAction": {
+            "type": "ConfirmIntent"
+        },
+        "intent": {
+            "name": "BookFlight",
+            "slots": {
+                "DepartureDate": {
+                    "value": {
+                        "originalValue": "tomorrow",
+                        "interpretedValue": "2023-05-09",
+                        "resolvedValues": [
+                            "2023-05-09"
+                    ]
+                 }
+                },
+                "DestinationCity": {
+                    "value": {
+                        "originalValue": "sf",
+                        "interpretedValue": "sf",
+                        "resolvedValues": [
+                            "sf"
+                        ]
+                    }
+                },
+                "OriginCity": {
+                    "value": {
+                        "originalValue": "nyc",
+                        "interpretedValue": "nyc",
+                        "resolvedValues": [
+                            "nyc"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "messages": [
+        {
+            "contentType": PlainText,
+            "content": "Okay, you want to fly from {OriginCity} to \
+            {DestinationCity} on {DepartureDate}. Is that correct?"
+        }
+    ]
+}
+
+"sessionState": {
+    "dialogAction": {
+        "type": "Close"
+    },
+    "intent": {
+        "name": "BookFlight",
+        "state": "Failed | Fulfilled | InProgress"
+    }
+}

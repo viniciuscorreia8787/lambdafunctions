@@ -1,0 +1,71 @@
+{
+    "messageVersion": "1.0",
+    "invocationSource": "DialogCodeHook | FulfillmentCodeHook",
+    "inputMode": "DTMF | Speech | Text",
+    "responseContentType": "audio/mpeg | audio/ogg | audio/pcm | text/plain; charset=utf-8",
+    "sessionId": string,
+    "inputTranscript": string,
+    "invocationLabel": string,
+    "bot": {
+        "id": string,
+        "name": string,
+        "localeId": string,
+        "version": string,
+        "aliasId": string,
+        "aliasName": string
+    },
+    "interpretations": [
+        {
+            "interpretationSource": "Bedrock | Lex",
+            "intent": {
+                // see Intent for details about the structure
+            },
+            "nluConfidence": number,
+            "sentimentResponse": {
+                "sentiment": "MIXED | NEGATIVE | NEUTRAL | POSITIVE",
+                "sentimentScore": {
+                    "mixed": number,
+                    "negative": number,
+                    "neutral": number,
+                    "positive": number
+                }
+            }
+        },
+        ...
+    ],
+    "proposedNextState": {
+        "dialogAction": {
+            "slotToElicit": string,
+            "type": "Close | ConfirmIntent | Delegate | ElicitIntent | ElicitSlot"
+        },
+        "intent": {
+            // see Intent for details about the structure
+        },
+        "prompt": {
+            "attempt": string 
+        }
+    },
+    "requestAttributes": {
+        string: string,
+        ...
+    },
+    "sessionState": {
+        // see Session state for details about the structure
+    },
+    "transcriptions": [
+        {
+            "transcription": string,
+            "transcriptionConfidence": number,
+            "resolvedContext": {
+                "intent": string
+            },
+            "resolvedSlots": {
+                slot name: {
+                    // see Slots for details about the structure
+                },
+                ...
+            }
+        },
+        ...
+    ]
+}
