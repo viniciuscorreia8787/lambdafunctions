@@ -15,24 +15,13 @@ import com.google.gson.Gson;
 
 public class Search implements RequestHandler<Object, Object> {
 
-    /***
-     * public String returnSearch(ByteArrayInputStream inputStream) throws
-     * IOException {
-     * 
-     * // String queryInput = inputStream.toString();
-     * String queryInput = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
-     * 
-     * Gson myGson = new Gson();
-     * LambdaInput lambdaInput = myGson.fromJson(queryInput, LambdaInput.class);
-     * 
-     * 
-     * }
-     ***/
-
     public Object handleRequest(Object event, Context context) {
         // LambdaLogger logger = context.getLogger();
         // logger.log("EVENT TYPE: " + event.getClass().toString());
         System.out.println("Search class started");
+
+        Gson myGson = new Gson();
+        LambdaInput lambdaInput = myGson.fromJson(myGson.toJson(context), LambdaInput.class);
 
         String jsonOutputString = "{" +
                 "\"messages\": [" +
@@ -121,10 +110,16 @@ public class Search implements RequestHandler<Object, Object> {
                 "\"sessionId\": \"851725315467669\"" +
                 "}";
 
-        Gson myGson = new Gson();
         LambdaOutput lambdaOutput = myGson.fromJson(jsonOutputString, LambdaOutput.class);
 
-        lambdaOutput.setSessionId("1234");
+        System.out.println("Object - Event");
+        System.out.println(myGson.toJson(event));
+
+        //System.out.println("Object - Context");
+        //System.out.println(myGson.toJson(context));
+
+
+        lambdaOutput.setSessionId(lambdaInput.getSessionId());
         return myGson.toJson(lambdaOutput);
     }
 }

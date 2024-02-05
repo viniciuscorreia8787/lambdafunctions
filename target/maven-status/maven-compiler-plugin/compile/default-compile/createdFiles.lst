@@ -1,13 +1,11 @@
-com/lambdafunctions/App.class
+com/lambdafunctions/LambdaOutput$NluConfidence.class
 com/lambdafunctions/LambdaOutput$SessionAttributes.class
 com/lambdafunctions/LambdaOutput$Interpretation.class
 com/lambdafunctions/LambdaOutput$Intent.class
+com/lambdafunctions/LambdaInput.class
+com/lambdafunctions/LambdaOutput$Message.class
 com/lambdafunctions/LambdaOutput$DialogAction.class
 com/lambdafunctions/LambdaOutput$Slots.class
 com/lambdafunctions/Search.class
 com/lambdafunctions/LambdaOutput.class
 com/lambdafunctions/LambdaOutput$SessionState.class
-com/lambdafunctions/LambdaOutput$NluConfidence.class
-com/lambdafunctions/HelloLambda.class
-com/lambdafunctions/LambdaInput.class
-com/lambdafunctions/LambdaOutput$Message.class
