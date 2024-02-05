@@ -1,30 +1,49 @@
 package com.lambdafunctions;
 
+/*** 
 import org.apache.commons.io.IOUtils;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 import java.io.IOException;
+import com.google.gson.Gson;
+***/
 
+import com.amazonaws.services.lambda.runtime.Context;
+//import com.amazonaws.services.lambda.runtime.LambdaLogger;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.google.gson.Gson;
 
-public class Search {
+public class Search implements RequestHandler<Object, Object> {
 
-    public String returnSearch(ByteArrayInputStream inputStream) throws IOException {    
-        
-        //String queryInput = inputStream.toString();
-        String queryInput = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+    /***
+     * public String returnSearch(ByteArrayInputStream inputStream) throws
+     * IOException {
+     * 
+     * // String queryInput = inputStream.toString();
+     * String queryInput = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+     * 
+     * Gson myGson = new Gson();
+     * LambdaInput lambdaInput = myGson.fromJson(queryInput, LambdaInput.class);
+     * 
+     * 
+     * }
+     ***/
 
-        Gson myGson = new Gson();
-        LambdaInput lambdaInput = myGson.fromJson(queryInput, LambdaInput.class);
-        
+    public Object handleRequest(Object event, Context context) {
+        // LambdaLogger logger = context.getLogger();
+        // logger.log("EVENT TYPE: " + event.getClass().toString());
+        System.out.println("Search class started");
+
         String jsonOutputString = "{" +
                 "\"messages\": [" +
                 "{" +
-                "\"content\": \"Conteúdos ao vivo é comigo mesmo! O campeonato Paulista começou com tudo, vou te indicar um jogo para assistir.\"," +
+                "\"content\": \"Conteúdos ao vivo é comigo mesmo! O campeonato Paulista começou com tudo, vou te indicar um jogo para assistir.\","
+                +
                 "\"contentType\": \"PlainText\"" +
                 "}," +
                 "{" +
-                "\"content\": \"Me diga qual time você gostaria de assistir hoje. [" + lambdaInput.getText() + "] \"," +
+                //"\"content\": \"Me diga qual time você gostaria de assistir hoje. [" + lambdaInput.getText() + "] \"," +
+                "\"content\": \"Me diga qual time você gostaria de assistir hoje. [" +  "] \"," +
                 "\"contentType\": \"PlainText\"" +
                 "}" +
                 "]," +
@@ -102,10 +121,10 @@ public class Search {
                 "\"sessionId\": \"851725315467669\"" +
                 "}";
 
+        Gson myGson = new Gson();
         LambdaOutput lambdaOutput = myGson.fromJson(jsonOutputString, LambdaOutput.class);
 
-        lambdaOutput.setSessionId( lambdaInput.getSessionId());
+        lambdaOutput.setSessionId("1234");
         return myGson.toJson(lambdaOutput);
     }
-
 }
