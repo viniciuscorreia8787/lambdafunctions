@@ -1,0 +1,549 @@
+{
+    "botAliasId": "TSTALIASID",
+    "botId": "QDSXY0QTJM",
+    "localeId": "pt_BR",
+    "text": "Oi",
+    "sessionId": "851725315467173"
+}
+
+   {
+    "messages": [
+        {
+            "content": "Olá, muito prazer! Eu me chamo BotVini e posso te ajudar com muitas atividades diferentes! Como eu posso te chamar?",
+            "contentType": "PlainText"
+        },
+        {
+            "content": "Me diga seu nome.",
+            "contentType": "PlainText"
+        }
+    ],
+    "sessionState": {
+        "dialogAction": {
+            "type": "ElicitSlot",
+            "slotToElicit": "ClientName"
+        },
+        "intent": {
+            "name": "Greetings",
+            "slots": {
+                "ClientName": null
+            },
+            "state": "InProgress",
+            "confirmationState": "None"
+        },
+        "sessionAttributes": {},
+        "originatingRequestId": "47b49e13-f8f2-4f33-8433-dd30ef343380"
+    },
+    "interpretations": [
+        {
+            "nluConfidence": {
+                "score": 1
+            },
+            "intent": {
+                "name": "Greetings",
+                "slots": {
+                    "ClientName": null
+                },
+                "state": "InProgress",
+                "confirmationState": "None"
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "intent": {
+                "name": "FallbackIntent",
+                "slots": {}
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.49
+            },
+            "intent": {
+                "name": "OrderFlowers",
+                "slots": {
+                    "FlowerType": null,
+                    "PickupDate": null,
+                    "PickupTime": null
+                }
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.48
+            },
+            "intent": {
+                "name": "ChooseLiveContent",
+                "slots": {
+                    "SoccerTeams": null
+                }
+            },
+            "interpretationSource": "Lex"
+        }
+    ],
+    "sessionId": "851725315467173"
+}
+
+   {
+    "botAliasId": "TSTALIASID",
+    "botId": "QDSXY0QTJM",
+    "localeId": "pt_BR",
+    "text": "Vinicius",
+    "sessionId": "851725315467173"
+}
+
+   {
+    "messages": [
+        {
+            "content": "Vou te chamar de Vinicius então!",
+            "contentType": "PlainText"
+        }
+    ],
+    "sessionState": {
+        "dialogAction": {
+            "type": "ConfirmIntent"
+        },
+        "intent": {
+            "name": "Greetings",
+            "slots": {
+                "ClientName": {
+                    "value": {
+                        "originalValue": "Vinicius",
+                        "interpretedValue": "Vinicius",
+                        "resolvedValues": []
+                    }
+                }
+            },
+            "state": "InProgress",
+            "confirmationState": "None"
+        },
+        "sessionAttributes": {},
+        "originatingRequestId": "47b49e13-f8f2-4f33-8433-dd30ef343380"
+    },
+    "interpretations": [
+        {
+            "intent": {
+                "name": "Greetings",
+                "slots": {
+                    "ClientName": {
+                        "value": {
+                            "originalValue": "Vinicius",
+                            "interpretedValue": "Vinicius",
+                            "resolvedValues": []
+                        }
+                    }
+                },
+                "state": "InProgress",
+                "confirmationState": "None"
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.49
+            },
+            "intent": {
+                "name": "OrderFlowers",
+                "slots": {
+                    "FlowerType": null,
+                    "PickupDate": null,
+                    "PickupTime": null
+                }
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "intent": {
+                "name": "FallbackIntent",
+                "slots": {}
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.38
+            },
+            "intent": {
+                "name": "ChooseLiveContent",
+                "slots": {
+                    "SoccerTeams": null
+                }
+            },
+            "interpretationSource": "Lex"
+        }
+    ],
+    "sessionId": "851725315467173"
+}
+
+   {
+    "botAliasId": "TSTALIASID",
+    "botId": "QDSXY0QTJM",
+    "localeId": "pt_BR",
+    "text": "Sim",
+    "sessionId": "851725315467173"
+}
+
+   {
+    "sessionState": {
+        "dialogAction": {
+            "type": "Close"
+        },
+        "intent": {
+            "name": "Greetings",
+            "slots": {
+                "ClientName": {
+                    "value": {
+                        "originalValue": "Vinicius",
+                        "interpretedValue": "Vinicius",
+                        "resolvedValues": []
+                    }
+                }
+            },
+            "state": "ReadyForFulfillment",
+            "confirmationState": "Confirmed"
+        },
+        "sessionAttributes": {},
+        "originatingRequestId": "47b49e13-f8f2-4f33-8433-dd30ef343380"
+    },
+    "interpretations": [
+        {
+            "nluConfidence": {
+                "score": 1
+            },
+            "intent": {
+                "name": "Greetings",
+                "slots": {
+                    "ClientName": {
+                        "value": {
+                            "originalValue": "Vinicius",
+                            "interpretedValue": "Vinicius",
+                            "resolvedValues": []
+                        }
+                    }
+                },
+                "state": "ReadyForFulfillment",
+                "confirmationState": "Confirmed"
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "intent": {
+                "name": "FallbackIntent",
+                "slots": {}
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.44
+            },
+            "intent": {
+                "name": "OrderFlowers",
+                "slots": {
+                    "FlowerType": null,
+                    "PickupDate": null,
+                    "PickupTime": null
+                }
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.37
+            },
+            "intent": {
+                "name": "ChooseLiveContent",
+                "slots": {
+                    "SoccerTeams": null
+                }
+            },
+            "interpretationSource": "Lex"
+        }
+    ],
+    "sessionId": "851725315467173"
+}
+
+   {
+    "botAliasId": "TSTALIASID",
+    "botId": "QDSXY0QTJM",
+    "localeId": "pt_BR",
+    "text": "O que ta passando na TV hoje?",
+    "sessionId": "851725315467173"
+}
+
+   {
+    "messages": [
+        {
+            "content": "Conteúdos ao vivo é comigo mesmo! O campeonato Paulista começou com tudo, vou te indicar um jogo para assistir.",
+            "contentType": "PlainText"
+        },
+        {
+            "content": "Me diga qual time você gostaria de assistir hoje.",
+            "contentType": "PlainText"
+        }
+    ],
+    "sessionState": {
+        "dialogAction": {
+            "type": "ElicitSlot",
+            "slotToElicit": "SoccerTeams"
+        },
+        "intent": {
+            "name": "ChooseLiveContent",
+            "slots": {
+                "SoccerTeams": null
+            },
+            "state": "InProgress",
+            "confirmationState": "None"
+        },
+        "sessionAttributes": {},
+        "originatingRequestId": "47b49e13-f8f2-4f33-8433-dd30ef343380"
+    },
+    "interpretations": [
+        {
+            "nluConfidence": {
+                "score": 0.92
+            },
+            "intent": {
+                "name": "ChooseLiveContent",
+                "slots": {
+                    "SoccerTeams": null
+                },
+                "state": "InProgress",
+                "confirmationState": "None"
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.62
+            },
+            "intent": {
+                "name": "Greetings",
+                "slots": {
+                    "ClientName": null
+                }
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "intent": {
+                "name": "FallbackIntent",
+                "slots": {}
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.42
+            },
+            "intent": {
+                "name": "OrderFlowers",
+                "slots": {
+                    "FlowerType": null,
+                    "PickupDate": null,
+                    "PickupTime": null
+                }
+            },
+            "interpretationSource": "Lex"
+        }
+    ],
+    "sessionId": "851725315467173"
+}
+
+   {
+    "botAliasId": "TSTALIASID",
+    "botId": "QDSXY0QTJM",
+    "localeId": "pt_BR",
+    "text": "Palmeiras",
+    "sessionId": "851725315467173"
+}
+
+   {
+    "messages": [
+        {
+            "content": "Beleza, entendi! ",
+            "contentType": "PlainText"
+        },
+        {
+            "content": "O jogo do Palmeiras será às 16hs. Vou adicionar um lembrete 15 minutos antes da partida. Te ajudo com algo mais?",
+            "contentType": "PlainText"
+        }
+    ],
+    "sessionState": {
+        "dialogAction": {
+            "type": "ConfirmIntent"
+        },
+        "intent": {
+            "name": "ChooseLiveContent",
+            "slots": {
+                "SoccerTeams": {
+                    "value": {
+                        "originalValue": "Palmeiras",
+                        "interpretedValue": "Palmeiras",
+                        "resolvedValues": [
+                            "Palmeiras"
+                        ]
+                    }
+                }
+            },
+            "state": "InProgress",
+            "confirmationState": "None"
+        },
+        "sessionAttributes": {},
+        "originatingRequestId": "47b49e13-f8f2-4f33-8433-dd30ef343380"
+    },
+    "interpretations": [
+        {
+            "intent": {
+                "name": "ChooseLiveContent",
+                "slots": {
+                    "SoccerTeams": {
+                        "value": {
+                            "originalValue": "Palmeiras",
+                            "interpretedValue": "Palmeiras",
+                            "resolvedValues": [
+                                "Palmeiras"
+                            ]
+                        }
+                    }
+                },
+                "state": "InProgress",
+                "confirmationState": "None"
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.51
+            },
+            "intent": {
+                "name": "OrderFlowers",
+                "slots": {
+                    "FlowerType": null,
+                    "PickupDate": null,
+                    "PickupTime": null
+                }
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "intent": {
+                "name": "FallbackIntent",
+                "slots": {}
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.47
+            },
+            "intent": {
+                "name": "Greetings",
+                "slots": {
+                    "ClientName": null
+                }
+            },
+            "interpretationSource": "Lex"
+        }
+    ],
+    "sessionId": "851725315467173"
+}
+
+   {
+    "botAliasId": "TSTALIASID",
+    "botId": "QDSXY0QTJM",
+    "localeId": "pt_BR",
+    "text": "Não",
+    "sessionId": "851725315467173"
+}
+
+   {
+    "messages": [
+        {
+            "content": "Fico à disposição caso queira buscar mais conteúdos. Até breve!",
+            "contentType": "PlainText"
+        }
+    ],
+    "sessionState": {
+        "dialogAction": {
+            "type": "Close"
+        },
+        "intent": {
+            "name": "ChooseLiveContent",
+            "slots": {
+                "SoccerTeams": {
+                    "value": {
+                        "originalValue": "Palmeiras",
+                        "interpretedValue": "Palmeiras",
+                        "resolvedValues": [
+                            "Palmeiras"
+                        ]
+                    }
+                }
+            },
+            "state": "Failed",
+            "confirmationState": "Denied"
+        },
+        "sessionAttributes": {},
+        "originatingRequestId": "47b49e13-f8f2-4f33-8433-dd30ef343380"
+    },
+    "interpretations": [
+        {
+            "nluConfidence": {
+                "score": 1
+            },
+            "intent": {
+                "name": "ChooseLiveContent",
+                "slots": {
+                    "SoccerTeams": {
+                        "value": {
+                            "originalValue": "Palmeiras",
+                            "interpretedValue": "Palmeiras",
+                            "resolvedValues": [
+                                "Palmeiras"
+                            ]
+                        }
+                    }
+                },
+                "state": "Failed",
+                "confirmationState": "Denied"
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "intent": {
+                "name": "FallbackIntent",
+                "slots": {}
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.45
+            },
+            "intent": {
+                "name": "Greetings",
+                "slots": {
+                    "ClientName": null
+                }
+            },
+            "interpretationSource": "Lex"
+        },
+        {
+            "nluConfidence": {
+                "score": 0.36
+            },
+            "intent": {
+                "name": "OrderFlowers",
+                "slots": {
+                    "FlowerType": null,
+                    "PickupDate": null,
+                    "PickupTime": null
+                }
+            },
+            "interpretationSource": "Lex"
+        }
+    ],
+    "sessionId": "851725315467173"
+}

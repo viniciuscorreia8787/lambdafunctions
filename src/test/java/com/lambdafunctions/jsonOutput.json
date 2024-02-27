@@ -1,0 +1,35 @@
+{
+    "sessionAttributes": {
+        "attr1": "SessionVal1",
+        "attr2": "SessionVal2"
+    },
+    "dialogAction": {
+        "type": "ElicitSlot",
+        "intentName": "ChooseLiveContent",
+        "slots": {
+            "BookTitle": "Some Book Title",
+            "WordsPosition": "starts"
+        },
+        "slotToElicit": "slot_to_elicit",
+        "message": [
+            {
+                "contentType": "PlainText",
+                "content": "Essa é minha primeira mensagem"
+            },
+            {
+                "contentType": "PlainText",
+                "content": "Essa é minha segunda mensagem"
+            }
+        ],
+        "responseCard": [
+            {
+                "text": "cleaning (30 min)",
+                "value": "cleaning"
+            },
+            {
+                "text": "cleaning (30 min)",
+                "value": "cleaning"
+            }
+        ]
+    }
+}
