@@ -19,6 +19,12 @@ public class Request {
     Map<String, String> requestAttributes;
     List<Transcription> transcriptions;
 
+    public List<Interpretation> getInterpretations() {
+        return interpretations;
+    }
+    public void setInterpretations(List<Interpretation> interpretations) {
+        this.interpretations = interpretations;
+    }
     public Map<String, String> getRequestAttributes() {
         return requestAttributes;
     }
@@ -42,12 +48,6 @@ public class Request {
     }
     public void setInputTranscript(String inputTranscript) {
         this.inputTranscript = inputTranscript;
-    }
-    public List<Interpretation> getInterpretations() {
-        return interpretations;
-    }
-    public void setInterpretations(List<Interpretation> interpretations) {
-        this.interpretations = interpretations;
     }
     public Bot getBot() {
         return bot;

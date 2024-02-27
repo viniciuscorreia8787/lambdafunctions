@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import com.amazonaws.services.lambda.runtime.Context;
-import com.fasterxml.jackson.databind.ser.std.StdKeySerializers.Default;
+//import com.fasterxml.jackson.databind.ser.std.StdKeySerializers.Default;
 import com.google.gson.Gson;
 import com.lambdafunctions.LexObjects.*;
 
@@ -14,11 +14,9 @@ public class MyTest {
 
         System.out.println("Process Start!");
 
-        //Gson gson = new Gson();
-        //Search lambda = new Search();
         Context context = new TestContext();  
-        
-        //Initialize Request Object
+
+        //Initialize Request Object as per documentation https://docs.aws.amazon.com/lexv2/latest/dg/lambda-input-format.html
         Request request = new Request();
 
         request.setMessageVersion("1.0");
@@ -38,10 +36,11 @@ public class MyTest {
         bot.setAliasName("Name of my alias");
         request.setBot(bot);
 
-        List<Interpretation> interpretations;
         Interpretation interpretation = new Interpretation();
         interpretation.setInterpretationSource("Lex");
         interpretation.setNluConfidence(0.8);
+        request.setInterpretations(Collections.singletonList(interpretation));
+
 
         Intent intent = new Intent();
         intent.setConfirmationState("Confirmed");
@@ -94,7 +93,6 @@ public class MyTest {
 
         SessionState sessionState = new SessionState();
 
-        List<ActiveContext> activeContexts;
         ActiveContext activeContext = new ActiveContext();
         activeContext.setName("Name of Active Context");
         Map<String, String> contextAttributes = Map.of(
@@ -115,6 +113,7 @@ public class MyTest {
             "SessAttribute1", "1",
             "SessAttribute2", "2"
         );
+        sessionState.setSessionAttributes(sessionAttributes);
 
         DialogAction dialogAction2 = new DialogAction();
         dialogAction2.setSlotElicitationStyle("Default");
@@ -133,9 +132,19 @@ public class MyTest {
         sessionState.setOriginatingRequestId("MyUniqueOriginalRequestID");
         request.setSessionState(sessionState);
 
-        /*** TO DO TRANSCRIPTIONS ***/
-        //https://docs.aws.amazon.com/lexv2/latest/dg/lambda-input-format.html
+        Transcription transcription = new Transcription();
+        transcription.setTranscription("This is my transcription");
+        transcription.setTranscriptionConfidence(0.9);
+        ResolvedContext resolvedContext = new ResolvedContext();
+        resolvedContext.setIntent("My Intent");
+        transcription.setResolvedContext(resolvedContext);
+
+        request.setTranscriptions(Collections.singletonList(transcription));
+
+        Gson gson = new Gson();
+        System.out.println(gson.toJson(request));
 
         System.out.println("End of execution");
+
     }
 }
