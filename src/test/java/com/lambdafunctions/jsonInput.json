@@ -1,13 +1,32 @@
 {
     "inputMode": "Text",
-    "sessionId": "851725315467696",
-    "inputTranscript": "Boa. O que tem de bom na TV hoje?",
+    "sessionId": "851725315467976",
+    "inputTranscript": "Vinicius",
     "interpretations": [
         {
             "interpretationSource": "Lex",
-            "nluConfidence": 0.73,
+            "nluConfidence": 1,
             "intent": {
-                "name": "ChooseLiveContent",
+                "name": "Greetings",
+                "slots": {
+                    "ClientName": {
+                        "shape": "Scalar",
+                        "value": {
+                            "originalValue": "Vinicius",
+                            "resolvedValues": [],
+                            "interpretedValue": "Vinicius"
+                        }
+                    }
+                },
+                "state": "InProgress",
+                "confirmationState": "None"
+            }
+        },
+        {
+            "interpretationSource": "Lex",
+            "nluConfidence": 0.49,
+            "intent": {
+                "name": "OrderFlowers",
                 "slots": {},
                 "state": "InProgress",
                 "confirmationState": "None"
@@ -24,28 +43,9 @@
         },
         {
             "interpretationSource": "Lex",
-            "nluConfidence": 0.53,
+            "nluConfidence": 0.38,
             "intent": {
-                "name": "Greetings",
-                "slots": {
-                    "ClientName": {
-                        "value": {
-                            "originalValue": "Vinicius",
-                            "resolvedValues": [],
-                            "interpretedValue": "Vinicius"
-                        },
-                        "shape": "Scalar"
-                    }
-                },
-                "state": "InProgress",
-                "confirmationState": "None"
-            }
-        },
-        {
-            "interpretationSource": "Lex",
-            "nluConfidence": 0.4,
-            "intent": {
-                "name": "OrderFlowers",
+                "name": "ChooseLiveContent",
                 "slots": {},
                 "state": "InProgress",
                 "confirmationState": "None"
@@ -61,27 +61,21 @@
         "aliasName": "TestBotAlias"
     },
     "responseContentType": "text/plain; charset=utf-8",
-    "proposedNextState": {
-        "prompt": {
-            "attempt": "Initial"
-        },
-        "intent": {
-            "name": "ChooseLiveContent",
-            "slots": {},
-            "state": "InProgress",
-            "confirmationState": "None"
-        },
-        "dialogAction": {
-            "type": "ElicitSlot",
-            "slotToElicit": "SoccerTeams"
-        }
-    },
     "sessionState": {
-        "originatingRequestId": "04e784a6-5a24-47e5-9d22-8bc07f6b3089",
+        "originatingRequestId": "23837410-ab5e-4c52-98d9-4878aefe5e8a",
         "sessionAttributes": {},
         "intent": {
-            "name": "ChooseLiveContent",
-            "slots": {},
+            "name": "Greetings",
+            "slots": {
+                "ClientName": {
+                    "shape": "Scalar",
+                    "value": {
+                        "originalValue": "Vinicius",
+                        "resolvedValues": [],
+                        "interpretedValue": "Vinicius"
+                    }
+                }
+            },
             "state": "InProgress",
             "confirmationState": "None"
         }

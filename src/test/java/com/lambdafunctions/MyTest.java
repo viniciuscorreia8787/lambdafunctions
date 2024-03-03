@@ -1,10 +1,10 @@
 package com.lambdafunctions;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 import com.amazonaws.services.lambda.runtime.Context;
-//import com.fasterxml.jackson.databind.ser.std.StdKeySerializers.Default;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.lambdafunctions.LexObjects.*;
 
@@ -16,6 +16,24 @@ public class MyTest {
 
         Context context = new TestContext();  
 
+        Request request = createRequest();
+        Gson gson = new Gson();
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, Object> mapRequest = objectMapper.convertValue(request, new TypeReference<Map<String, Object>>() {});
+
+        //Execute Search
+        Search search = new Search();
+        Object responseObject = search.handleRequest(mapRequest, context);
+
+        System.out.println("*** RESPONSE OBJECT ***");
+        System.out.println(gson.toJson(responseObject));
+
+        System.out.println("End of execution");
+
+    }
+
+    public static Request createRequest(){
+        
         //Initialize Request Object as per documentation https://docs.aws.amazon.com/lexv2/latest/dg/lambda-input-format.html
         Request request = new Request();
 
@@ -24,7 +42,7 @@ public class MyTest {
         request.setInputMode("Text");
         request.setResponseContentType("text/plain; charset=utf-8");
         request.setSessionId("myUniqueSessionId");
-        request.setInputTranscript("Transcription of my inpyut");
+        request.setInputTranscript("Vinicius");
         request.setInvocationLabel("invocationLabel");
         
         Bot bot = new Bot();
@@ -141,10 +159,6 @@ public class MyTest {
 
         request.setTranscriptions(Collections.singletonList(transcription));
 
-        Gson gson = new Gson();
-        System.out.println(gson.toJson(request));
-
-        System.out.println("End of execution");
-
+        return request;
     }
 }

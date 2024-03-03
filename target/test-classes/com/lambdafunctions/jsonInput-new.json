@@ -1,91 +1,80 @@
 {
     "inputMode": "Text",
-    "sessionId": "851725315467696",
-    "inputTranscript": "Boa. O que tem de bom na TV hoje?",
+    "sessionId": "myUniqueSessionId",
+    "inputTranscript": "Transcription of my inpyut",
     "interpretations": [
         {
             "interpretationSource": "Lex",
-            "nluConfidence": 0.73,
+            "nluConfidence": 0.8,
             "intent": {
-                "name": "ChooseLiveContent",
-                "slots": {},
-                "state": "InProgress",
-                "confirmationState": "None"
-            }
-        },
-        {
-            "interpretationSource": "Lex",
-            "intent": {
-                "name": "FallbackIntent",
-                "slots": {},
-                "state": "InProgress",
-                "confirmationState": "None"
-            }
-        },
-        {
-            "interpretationSource": "Lex",
-            "nluConfidence": 0.53,
-            "intent": {
-                "name": "Greetings",
-                "slots": {
-                    "ClientName": {
-                        "value": {
-                            "originalValue": "Vinicius",
-                            "resolvedValues": [],
-                            "interpretedValue": "Vinicius"
-                        },
-                        "shape": "Scalar"
-                    }
-                },
-                "state": "InProgress",
-                "confirmationState": "None"
-            }
-        },
-        {
-            "interpretationSource": "Lex",
-            "nluConfidence": 0.4,
-            "intent": {
-                "name": "OrderFlowers",
-                "slots": {},
-                "state": "InProgress",
-                "confirmationState": "None"
+                "name": "MyIntentName",
+                "state": "Fulfilled",
+                "confirmationState": "Confirmed"
+            },
+            "sentimentResponse": {
+                "sentiment": "POSITIVE",
+                "sentimentScore": {
+                    "mixed": 0.1,
+                    "negative": 0.3,
+                    "neutral": 0.2,
+                    "positive": 0.9
+                }
             }
         }
     ],
     "bot": {
-        "name": "MyFirstOrderFlower",
-        "version": "DRAFT",
+        "name": "Bot Name",
+        "version": "LATEST",
         "localeId": "pt_BR",
-        "id": "QDSXY0QTJM",
-        "aliasId": "TSTALIASID",
-        "aliasName": "TestBotAlias"
+        "id": "myUniqueBotId",
+        "aliasId": "MyAliasID",
+        "aliasName": "Name of my alias"
     },
-    "responseContentType": "text/plain; charset=utf-8",
-    "proposedNextState": {
-        "prompt": {
-            "attempt": "Initial"
-        },
-        "intent": {
-            "name": "ChooseLiveContent",
-            "slots": {},
-            "state": "InProgress",
-            "confirmationState": "None"
+    "responseContentType": "text/plain; charset\u003dutf-8",
+    "sessionState": {
+        "activeContexts": [
+            {
+                "name": "Name of Active Context",
+                "contextAttributes": {
+                    "ContAttribute2": "2",
+                    "ContAttribute1": "1"
+                },
+                "timeToLive": {
+                    "timeToLiveInSeconds": 1000,
+                    "turnsToLive": 50
+                }
+            }
+        ],
+        "sessionAttributes": {
+            "SessAttribute2": "2",
+            "SessAttribute1": "1"
         },
         "dialogAction": {
-            "type": "ElicitSlot",
-            "slotToElicit": "SoccerTeams"
-        }
-    },
-    "sessionState": {
-        "originatingRequestId": "04e784a6-5a24-47e5-9d22-8bc07f6b3089",
-        "sessionAttributes": {},
+            "slotElicitationStyle": "Default",
+            "type": "ConfirmIntent",
+            "slotToElicit": "SlotToBeElicited"
+        },
         "intent": {
-            "name": "ChooseLiveContent",
-            "slots": {},
-            "state": "InProgress",
-            "confirmationState": "None"
-        }
+            "name": "MyIntentName",
+            "state": "Fulfilled",
+            "confirmationState": "Confirmed"
+        },
+        "originatingRequestId": "MyUniqueOriginalRequestID"
     },
     "messageVersion": "1.0",
-    "invocationSource": "DialogCodeHook"
+    "invocationSource": "FulfillmentCodeHook",
+    "invocationLabel": "invocationLabel",
+    "requestAttributes": {
+        "ReqAttribute2": "2",
+        "ReqAttribute1": "1"
+    },
+    "transcriptions": [
+        {
+            "transcription": "This is my transcription",
+            "transcriptionConfidence": 0.9,
+            "resolvedContext": {
+                "intent": "My Intent"
+            }
+        }
+    ]
 }
